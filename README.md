@@ -12,7 +12,7 @@ Welcome to my project repository. I am a student at the University of Colorado B
 * **Key Features:** Implements vectorized relativistic reference frame transformations, computes stochastic interaction probabilities based on proper lifetime and altitude, and mathematically demonstrates atmospheric time dilation.
 * **Tech Stack:** Python, NumPy, Matplotlib, Jupyter Notebook.
 
-### 2. [QForge Automated Hardware Test Controller](./qforge-test-controller)
+### 2. [Atom Chip Automated Test Controller](./qforge-test-controller)
 **Domain:** Hardware-in-the-Loop (HITL) Testing, Embedded Systems, GUI Development
 * **Overview:** A multithreaded desktop application designed to interface with a custom PCB test bench for programmable current sourcing and 28x28 resistance mapping.
 * **Key Features:** Controls an I2C multiplexer (TCA9548A) and eight 16-bit ADCs (ADS1115) to read micro-volt differentials. Includes a Tkinter GUI with real-time Matplotlib telemetry to run cyclical stress tests and automatically halt upon detecting threshold-exceeding resistance degradation. 
