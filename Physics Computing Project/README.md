@@ -19,3 +19,20 @@ The simulation models the trajectories and decay characteristics of individual p
 
 ![Particle Tracks](<Cosmic Shower Electron Pion Muon Results.png>)
 
+### 2. Proton Downscatter Cascade
+A high-energy proton moving at relativistic speeds enters the atmosphere and collides with an air molecule. During this collision, kinetic energy is converted into mass via $E = mc^2$, generating unstable pions that subsequently decay into muons and neutrinos. This cascade simulates the "rain" of particles reaching the Earth's surface.
+
+![Particle Tracks](<Cosmic Shower Proton Results.png>)
+
+### 3. Proof of Special Relativity
+Cosmic ray muons are created around 15 km in the upper atmosphere with a proper lifetime of approximately 2.2 microseconds[cite: 2]. Without relativistic time dilation ($\gamma = 1$), almost no muons would survive to reach the ground. The Monte Carlo simulation proves this by tracking 10,000 primary protons and comparing the decay altitudes and ground survival rates of the resulting muons under both classical and relativistic conditions.
+
+![Particle Tracks](<Cosmic Shower Relativity Experiment.png>)
+
+## Software Architecture
+
+The simulation is built in Python and utilizes `numpy` for vectorized kinematics and Monte Carlo probabilities[cite: 1]. 
+
+* **Kinematics Engine (`lorentz_beta_gamma`, `boost_momentum`, `momentum_to_velocity`):** Handles relativistic reference frame conversions and energy threshold checks.
+* **Interaction Engine (`particle_decay`, `proton_downscatter`):** Calculates product trajectories, scattering angles, and interaction probabilities based on atmospheric height, speed of light ($c=1$), and proper lifetime constants.
+* **Monte Carlo Loop (`run_cosmic_MC`):** Evolves particle states over discrete timesteps ($dt$), managing attenuation and trajectory tracking.
