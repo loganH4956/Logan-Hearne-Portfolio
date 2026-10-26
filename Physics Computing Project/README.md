@@ -17,5 +17,5 @@ When high-energy galactic protons enter the upper atmosphere (approximately 20 k
 ### 1. Basic Particle Decay Profiles
 The simulation models the trajectories and decay characteristics of individual particles over time. Electrons do not decay in this model and fall directly to the ground, whereas pions exhibit complex decay chains into muons and neutrinos. Conservation of momentum is visually observable as decay products diverge with equal and opposite horizontal momenta.
 
-![Particle Tracks](Cosmic Shower Electron Pion Muon Results.png)
+![Particle Tracks](<Cosmic Shower Electron Pion Muon Results.png>)
 
