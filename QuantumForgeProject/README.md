@@ -12,7 +12,11 @@ This project interfaces standard desktop environments with low-level GPIO and I2
 * **Pulsed Burn-In Testing:** Executes stress tests using configurable pulse counts, active duration (`on_time`), and lockout periods (`off_time`), while monitoring real-time resistance drift against safety thresholds ($\pm 10\%$).
 * **Desktop GUI & Live Telemetry:** A threaded Tkinter interface prevents UI locking during hardware execution, providing live Matplotlib graphs of cycle-over-cycle resistance and automated Excel report generation with conditional formatting.
 
-## Visualizations and Results
+## Software Architecture
 
-### 1. Test Controller Interface
-The primary GUI allows operators to configure burn-in parameters, select target pads, and monitor execution. The interface features a live-updating Matplotlib canvas that tracks resistance drift in real-time.
+The codebase separates the frontend UI from hardware execution to ensure timing accuracy and prevent thread-blocking during long burn-in cycles.
+
+* **`GUI.py`:** Main Tkinter application. Handles multithreaded task queues, `matplotlib` embedding, and `.xlsx` generation via `openpyxl`.
+* **`functions.py`:** Low-level hardware drivers. Manages the `adafruit_ads1x15` and `adafruit_tca9548a` libraries, calculates measured vs. ideal currents, and handles GPIO latching.
+* **`Resistance_map.py`:** Implements the $O(N^2)$ traversal algorithm to map all 28 pins, configuring ADC gain dynamically based on current requirements.
+* **`burnin.py`:** Uses `pydantic` for strict configuration validation and operates a generator-based state machine to yield live telemetry back to the GUI.
