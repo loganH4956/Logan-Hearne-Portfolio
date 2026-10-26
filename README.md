@@ -20,14 +20,6 @@ Welcome to my project repository. I am a student at the University of Colorado B
 
 ---
 
-## Additional Work & Archives
-
-* **[Data Science & Analysis](./data-science-archive):** Contains academic research and data cleaning scripts, including a study on electric vehicle trends in Washington State and Pandas-based administrative pipelines.
-* **[Systems & Low-Level Programming](./systems-programming):** Coursework exploring x86-64 assembly, memory layout, stack mechanics, and ELF object symbol tables.
-* **[Quantum Computing](./quantum-computing):** Exploratory projects utilizing Qiskit for quantum circuit implementation and simulation.
-
----
-
 ## Technical Toolbox
 
 * **Languages:** Python, SQL, C/C++, x86-64 Assembly, JavaScript
